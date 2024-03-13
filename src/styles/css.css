@@ -1,0 +1,101 @@
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes rotate {
+    0% {
+        --rotate : 0deg;
+    }
+
+    100% {
+        --rotate : 360deg;
+    }
+}
+
+:root {
+    ---bodyback:linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    --cardboxback: linear-gradient(to top, #0f0c29, #302b63, #24243e);
+}
+
+
+body {
+    font-size: 100%;
+    margin: 0;
+    height: 100vh;
+    background-image: var(---bodyback);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    max-width: 100%;
+    height: inherit;
+}
+
+#box {
+    display: flex;
+    width: 60%;
+    height: 90%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+}
+
+#card-box {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    background-image: var(--cardboxback);
+    text-align: center;
+    font-size: xx-large;
+    text-transform: capitalize;
+    font-style: italic;
+    padding-top: 50%;
+    color: white;
+}
+
+#card-border {
+    width: 95%;
+    height: 95%;
+    z-index: -1;
+    position: absolute;
+    background-image: linear-gradient( 
+        var(--rotate),#22c1c3, #fdbb2d 
+    );
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border-radius: 20px;
+}
+
+#card-background {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    background-image: linear-gradient( 
+        var(--rotate),#22c1c3, #fdbb2d 
+    );
+    filter: blur(20px);
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border-radius: 20px;
+}
+
+
+
+
+
