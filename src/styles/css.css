@@ -58,12 +58,17 @@ body {
     height: 90%;
     position: absolute;
     background-image: var(--cardboxback);
-    text-align: center;
+}
+
+span {
+    align-self: center;
     font-size: xx-large;
+    color: white;
+    position: absolute;
+    letter-spacing: 10px;
     text-transform: capitalize;
     font-style: italic;
-    padding-top: 50%;
-    color: white;
+    transition: all 2s ease;
 }
 
 #card-border {
@@ -94,8 +99,6 @@ body {
     animation-iteration-count: infinite;
     border-radius: 20px;
 }
-
-
 
 
 
